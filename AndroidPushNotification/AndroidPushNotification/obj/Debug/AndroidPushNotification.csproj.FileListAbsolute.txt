@@ -1,0 +1,11 @@
+D:\vimal d\vimal\Project\Library\AndroidPushNotification\AndroidPushNotification\obj\Debug\ResolveAssemblyReference.cache
+D:\vimal d\vimal\Project\Library\AndroidPushNotification\AndroidPushNotification\bin\AndroidPushNotification.dll
+D:\vimal d\vimal\Project\Library\AndroidPushNotification\AndroidPushNotification\bin\AndroidPushNotification.pdb
+D:\vimal d\vimal\Project\Library\AndroidPushNotification\AndroidPushNotification\obj\Debug\AndroidPushNotification.dll
+D:\vimal d\vimal\Project\Library\AndroidPushNotification\AndroidPushNotification\obj\Debug\AndroidPushNotification.pdb
+E:\Projects\Outsource Projects\AndroidPushNotification\AndroidPushNotification\AndroidPushNotification\bin\AndroidPushNotification.dll.config
+E:\Projects\Outsource Projects\AndroidPushNotification\AndroidPushNotification\AndroidPushNotification\bin\AndroidPushNotification.dll
+E:\Projects\Outsource Projects\AndroidPushNotification\AndroidPushNotification\AndroidPushNotification\bin\AndroidPushNotification.pdb
+E:\Projects\Outsource Projects\AndroidPushNotification\AndroidPushNotification\AndroidPushNotification\obj\Debug\AndroidPushNotification.csprojResolveAssemblyReference.cache
+E:\Projects\Outsource Projects\AndroidPushNotification\AndroidPushNotification\AndroidPushNotification\obj\Debug\AndroidPushNotification.dll
+E:\Projects\Outsource Projects\AndroidPushNotification\AndroidPushNotification\AndroidPushNotification\obj\Debug\AndroidPushNotification.pdb
