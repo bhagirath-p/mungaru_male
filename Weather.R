@@ -1,4 +1,5 @@
 library(weatherData)
+library(ggplot2)
 library(data.table)
 library(plyr)
 library(AnomalyDetection)
@@ -216,10 +217,17 @@ test <- te[,.(
 ), DateUTC]
 
 test <- data.frame(test)
+dates <- subset(test, select=c(1))
 test <- subset(test, select=-c(1))
+test <- sweep(test, MARGIN=2, train_mean, FUN = '-')
+test <- sweep(test, MARGIN=2, train_sd, FUN = '/')
 
-test <- read.csv('/Users/Shank/Downloads/final-1.csv')
+write.csv(test, '/Users/Shank/Downloads/altered.csv')
 testHex<-as.h2o(test, destination_frame="test.hex")
 
 predictions<-as.data.frame(h2o.predict(rfHex, testHex))
+res <- abs(data.frame(test$windDegMean)-predictions)
+res <- cbind(dates, res)
+res <- data.frame(res)
+res[which(res$test.windDegMean > 0.8),]
 
