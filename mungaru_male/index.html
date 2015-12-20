@@ -18,13 +18,13 @@
 	<div class="result_div"></div>
 	<script type="text/javascript">
 		$(function() {
-			var frm = $(".data-form");
-			var dat = JSON.stringify(frm.serializeArray()); 
+			wind_direct = $("#wind_direct").val();
+			wind_speed = $("#wind_speed").val();
 			$("#submit").click(function() {
 				$.ajax({
 					'url' : 'http://localhost:5000/model/feeds',
 					'type' : 'POST',
-					'data' : dat,
+					'data' : {'wind_speed' : wind_speed, 'wind_direct' : wind_direct},
 					'success': function(response) {
 						console.log(response);
 						$(".result_div").empty();
