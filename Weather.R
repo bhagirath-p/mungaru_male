@@ -123,10 +123,10 @@ cols <- c("temp", "tempMean", "tempMean", "tempSd", "tempMin", "tempMax", "dewPo
 target <- "windDegMean"
 
 rfHex<-h2o.randomForest(x=cols, y=target, training_frame=trainHex, model_id="timeModel.hex", ntrees=1700, sample_rate = 0.6, verbose = TRUE)
-h2o.saveModel(rfHex, path = "/Users/Shank/Desktop/Hackathon/ModelNew", force = FALSE)
+h2o.saveModel(rfHex, path = "/Users/Shank/Desktop/Hackathon/Model1", force = FALSE)
 
 # Collect data
-testSfo = getWeatherForDate("SFO", "2013-01-01", end_date="2013-01-25", 
+testSfo = getWeatherForDate("SFO", "2013-01-01", end_date="2013-01-02", 
                         opt_detailed=T,
                         opt_custom_columns=T, custom_columns=c(1,2,3,4,5,6,7,8,9,10,11,12,13,14))
 
@@ -222,7 +222,7 @@ test <- subset(test, select=-c(1))
 test <- sweep(test, MARGIN=2, train_mean, FUN = '-')
 test <- sweep(test, MARGIN=2, train_sd, FUN = '/')
 
-write.csv(test, '/Users/Shank/Downloads/altered.csv')
+write.csv(te[1:19,], '/Users/Shank/Downloads/gen.csv')
 testHex<-as.h2o(test, destination_frame="test.hex")
 
 predictions<-as.data.frame(h2o.predict(rfHex, testHex))

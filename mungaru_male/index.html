@@ -5,7 +5,7 @@
 	<title>Mungaru Male</title>
 </head>
 <body>
-	<h2>Mungaru Male - System to detect anomalies in weather</h2>
+	<h2>Mungaru Male - System to detect </br>anomalies in weather</h2>
 	<div class="form_div">
 		<form method="POST" class='data-form'>
 			<label>Wind Speed</label>&nbsp; &nbsp;
@@ -17,14 +17,14 @@
 	</div>
 	<div class="result_div"></div>
 	<script type="text/javascript">
-		$(function() {
-			wind_direct = $("#wind_direct").val();
-			wind_speed = $("#wind_speed").val();
 			$("#submit").click(function() {
+				wind_direct = $("#wind_direct").val();
+				wind_speed = $("#wind_speed").val();
+				data = {'wind_speed' : wind_speed, 'wind_direct' : wind_direct}
 				$.ajax({
 					'url' : 'http://localhost:5000/model/feeds',
 					'type' : 'POST',
-					'data' : {'wind_speed' : wind_speed, 'wind_direct' : wind_direct},
+					'data' : JSON.stringify(data),
 					'success': function(response) {
 						console.log(response);
 						$(".result_div").empty();
@@ -34,7 +34,6 @@
 					}
 				});
 			});
-		});
 	</script>
 </body>
 </html>
