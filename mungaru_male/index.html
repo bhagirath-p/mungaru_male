@@ -22,8 +22,8 @@
 			var dat = JSON.stringify(frm.serializeArray()); 
 			$("#submit").click(function() {
 				$.ajax({
-					'url' : '', //URL for the end points
-					'action' : 'POST',
+					'url' : 'http://localhost:5000/model/feeds',
+					'type' : 'POST',
 					'data' : dat,
 					'success': function(response) {
 						console.log(response);

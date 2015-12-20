@@ -2,7 +2,6 @@ library(weatherData)
 library(ggplot2)
 library(data.table)
 library(plyr)
-library(AnomalyDetection)
 library(h2o)
 
 # Collect data
@@ -124,6 +123,7 @@ cols <- c("temp", "tempMean", "tempMean", "tempSd", "tempMin", "tempMax", "dewPo
 target <- "windDegMean"
 
 rfHex<-h2o.randomForest(x=cols, y=target, training_frame=trainHex, model_id="timeModel.hex", ntrees=1700, sample_rate = 0.6, verbose = TRUE)
+h2o.saveModel(rfHex, path = "/Users/Shank/Desktop/Hackathon/ModelNew", force = FALSE)
 
 # Collect data
 testSfo = getWeatherForDate("SFO", "2013-01-01", end_date="2013-01-25", 
