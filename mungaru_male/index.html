@@ -20,10 +20,10 @@
 		$(function() {
 			var frm = $(".data-form");
 			var dat = JSON.stringify(frm.serializeArray()); 
-			$(".submit").click(function() {
+			$("#submit").click(function() {
 				$.ajax({
-					'url' : '',
-					'action' : 'GET',
+					'url' : '', //URL for the end points
+					'action' : 'POST',
 					'data' : dat,
 					'success': function(response) {
 						console.log(response);
