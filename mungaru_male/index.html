@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<title>Mungaru Male</title>
+</head>
+<body>
+	<h2>Mungaru Male - System to detect anomalies in weather and rainfall</h2>
+	<div class="form_div">
+		<form method="GET" class='data-form'>
+			<label>Wind Speed</label>&nbsp; &nbsp;
+			<input type="text" name="wind_speed"><br>
+			<label> Wind Direction</label>&nbsp; &nbsp;
+			<input type="text" name="wind_direct"><br>
+			<input type="button" id="submit" value="Predect Anomaly">
+		</form>
+	</div>
+	<div class="result_div"></div>
+	<script type="text/javascript">
+		$(function() {
+			var frm = $(".data-form");
+			var dat = JSON.stringify(frm.serializeArray()); 
+			$(".submit").click(function() {
+				$.ajax({
+					'url' : '',
+					'action' : 'GET',
+					'data' : dat,
+					'success': function(response) {
+						console.log(response);
+						$(".result_div").empty();
+						$(".result_div").append($("<p/>", {
+							"text" : response
+						}));
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
